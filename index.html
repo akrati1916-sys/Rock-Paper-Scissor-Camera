@@ -1,7 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
+            crossorigin="anonymous"></script>
 </head>
+
 <body>
- <script src="script.js"></script>
+
+<div class="game">
+
+    <h1>✊ Rock Paper Scissors ✌️</h1>
+
+    <p id="round">Round: 1 / 5</p>
+
+    <div class="score">
+
+        <div>
+            <h3>You</h3>
+            <span id="playerScore">0</span>
+        </div>
+
+        <div>
+            <h3>Computer</h3>
+            <span id="computerScore">0</span>
+        </div>
+
+    </div>
+
+
+    <!-- Camera -->
+    <div class="camera-container">
+
+        <video id="video" autoplay playsinline></video>
+
+        <canvas id="canvas"></canvas>
+
+    </div>
+
+
+    <div id="detected">
+        Show your hand ✋
+    </div>
+
+
+    <div class="battle">
+
+        <div>
+            <h3>You</h3>
+            <div id="playerChoice">❔</div>
+        </div>
+
+        <div class="vs">
+            VS
+        </div>
+
+        <div>
+            <h3>Computer</h3>
+            <div id="computerChoice">❔</div>
+        </div>
+
+    </div>
+
+
+    <h2 id="result">Waiting for your hand...</h2>
+
+    <p id="countdown"></p>
+
+    <button id="restart" onclick="restartGame()">
+        Play Again
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+</html>
+
